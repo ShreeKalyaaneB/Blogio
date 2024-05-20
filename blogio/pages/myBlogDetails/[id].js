@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/router";
 import Header from "@/components/Header";
+import Image from "next/image";
 
 
 const BlogDetailsPage = () => {
@@ -59,10 +60,12 @@ const BlogDetailsPage = () => {
 
         <div className="relative mt-4 z-0 mx-auto aspect-w-16 aspect-h-9 max-w-screen-lg overflow-hidden">
           <div className="bg-gray-300 w-full h-full">
-            <img
+            <Image
               src={blog.coverPhoto}
               alt="Cover Photo"
-              className="object-cover w-full h-full"
+              width={100}
+              height={100}
+              className="object-fit w-full h-full"
             />
           </div>
         </div>

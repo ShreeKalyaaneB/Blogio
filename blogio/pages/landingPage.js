@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/router";
 import DOMPurify from "dompurify";
+import Image from "next/image";
 
 export default function LandingPage() {
   const [blogs, setBlogs] = useState([]);
@@ -41,7 +42,7 @@ export default function LandingPage() {
               onClick={() => handleNavigate(blog._id)}
             >
               <div onClick={() => handleNavigate(blog._id)}>
-                <img class="rounded-t-lg cursor-pointer" src={blog.coverPhoto} alt="" />
+                <Image class="rounded-t-lg cursor-pointer w-full h-full object-cover" src={blog.coverPhoto} width={100} height={100}  alt="" />
               </div>
               <div class="p-5">
                 <a href="#">

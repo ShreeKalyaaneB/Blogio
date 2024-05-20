@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
 import axios from "axios";
+import Link from "next/link";
 
 export default function Register() {
   const [email, setEmail] = useState("");
@@ -43,12 +44,12 @@ export default function Register() {
       style={{ backgroundImage: "url('/background.png')" }}
     >
       <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-        <a
-          href="#"
+        <Link
+          href="/"
           className="flex items-center mb-6 text-2xl font-semibold text-white"
         >
           Blogio
-        </a>
+        </Link>
         <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
           <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
             <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
@@ -115,12 +116,12 @@ export default function Register() {
               )}
               <p className="text-sm font-light text-gray-500 dark:text-gray-400">
                 Already have an account?{" "}
-                <a
+                <Link
                   href="/auth/signin"
                   className="font-medium text-primary-600 hover:underline dark:text-primary-500"
                 >
                   Sign in
-                </a>
+                </Link>
               </p>
             </form>
           </div>

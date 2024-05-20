@@ -3,6 +3,7 @@ import axios from "axios";
 import { useSession } from "next-auth/react";
 import Header from "@/components/Header";
 import DOMPurify from "dompurify";
+import Image from "next/image";
 
 
 export default function SingleBlogPage({ blog, comments: initialComments }) {
@@ -87,8 +88,10 @@ export default function SingleBlogPage({ blog, comments: initialComments }) {
 
         <div className="relative z-0 mt-2 mx-auto aspect-w-16 aspect-h-9 max-w-screen-lg overflow-hidden  mb-0">
           <div className="bg-gray-300 w-full h-full">
-            <img
+            <Image
               src={blog.coverPhoto}
+              width={100}
+              height={100}
               alt="Cover Photo"
               className="object-cover w-full h-full"
             />

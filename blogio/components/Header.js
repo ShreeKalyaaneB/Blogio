@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useSession, signOut } from "next-auth/react";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -56,14 +57,14 @@ function Header() {
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <nav className="flex items-center justify-between h-16 lg:h-20">
             <div className="flex-shrink-0">
-              <a
+              <Link
                 href="/"
                 title=""
                 className="flex font-bold text-white text-2xl "
               >
                 Blogio
-                <img className="w-auto h-8 lg:h-10" src="" alt="" />
-              </a>
+                
+              </Link>
             </div>
 
             <button
@@ -106,13 +107,13 @@ function Header() {
             </button>
 
             <div className="hidden lg:flex lg:items-center lg:ml-auto lg:space-x-10">
-              <a
+              <Link
                 href="/"
                 title=""
                 className="text-base font-medium text-white transition-all duration-200 hover:text-blue-600 focus:text-blue-600"
               >
                 Home
-              </a>
+              </Link>
               {session && (
                 <div className="relative" ref={profileMenuRef}>
                   <button
@@ -124,12 +125,12 @@ function Header() {
                   {isProfileMenuOpen && (
                     <div className="absolute right-0 w-48 mt-2 origin-top-right bg-white border border-gray-200 rounded-md shadow-lg">
                       <div className="py-1">
-                        <a
+                        <Link
                           href="/myBlogs"
                           className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                         >
                           My Blogs
-                        </a>
+                        </Link>
                         <button
                           onClick={() => signOut()}
                           className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
@@ -158,13 +159,13 @@ function Header() {
             >
               <div className="flow-root">
                 <div className="flex flex-col px-6 -my-2 space-y-1">
-                  <a
+                  <Link
                     href="/"
                     title=""
                     className="inline-flex py-2 text-base font-medium text-white transition-all duration-200 hover:text-blue-600 focus:text-blue-600"
                   >
                     Home
-                  </a>
+                  </Link>
 
                   {session && (
                     <div className="relative" ref={profileMenuRef}>
@@ -177,12 +178,12 @@ function Header() {
                       {isProfileMenuOpen && (
                         <div className="absolute right-0 w-48 mt-2 origin-top-right bg-white border border-gray-200 rounded-md shadow-lg">
                           <div className="py-1">
-                            <a
+                            <Link
                               href="/myBlogs"
                               className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                             >
                               My Blogs
-                            </a>
+                            </Link>
                             <button
                               onClick={() => signOut()}
                               className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"

@@ -1,10 +1,10 @@
-import Image from "next/image";
-import { Inter } from "next/font/google";
-
-const inter = Inter({ subsets: ["latin"] });
-
+import Header from "@/components/Header";
+import Landing from "./landingPage"
 export default function Home() {
   return (
-    <div>hello</div>
+    <div>
+      <Header />
+      <Landing />
+      </div>
   );
 }
